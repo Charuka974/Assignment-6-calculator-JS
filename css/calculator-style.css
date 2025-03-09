@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-image: url("assets/images/calculator\ background.jpg");
+    background-image: url("/assets/images/calculator\ background.jpg");
     background-size: cover;
 }
 .cal-container{
