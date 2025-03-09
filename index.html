@@ -3,10 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Simple Calculator</title>
+
+    <link rel="stylesheet" href="/css/calculator-style.css">
+
+    <style>
+        body{
+            margin: 0;
+            background-image: src("");
+        }
+        .cal-container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            /* width: 500px;
+            height: 600px; */
+            padding: 2px;
+            background-color: rgba(128, 128, 128, 0.474);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        .bottom-container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+        .button{
+            border: 0px;
+            box-shadow: 2px 2px 5px black;
+
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: 'Inter', 'Poppins', 'Roboto', sans-serif;        
+        }
+        .cal-btn{
+            width: 100px;
+            height: 50px;
+        }
+        .cal-btn:active{
+           background-color: rgb(187, 187, 255);
+        }
+        .clear-btn{
+            background-color: rgb(230, 81, 81);
+            width: 50px;
+            height: 50px;
+            color: white;
+        }
+        .clear-btn:active{
+            background-color: rgb(213, 28, 28);
+        }
+        .top-container{
+            width: 415px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .result-display{
+            width: 350px;
+            border: 0px;
+            box-shadow: 2px 2px 5px black;
+
+            text-align: end;
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: 'Inter', 'Poppins', 'Roboto', sans-serif;
+        }
+        .arithmetic-operator{
+            background-color: rgb(252, 202, 202);
+        }
+        #equal{
+            background-color: rgb(129, 233, 233);
+            /* override the background color of arithmetic-operator */
+        }
+        #equal:active{
+            background-color: rgb(121, 232, 134);
+            /* override the background color of arithmetic-operator */
+        }
+        
+    </style>
+
+
 </head>
 <body>
 
-    
+    <div class="cal-container">
+        <div class="top-container">
+            <button onclick="clearDisplay()" class="clear-btn button" id="clear">C</button>
+            <input class="result-display" id="display" type="text">
+        </div>
+
+        <div class="bottom-container">
+            <button onclick="clickButton('7')" class="cal-btn button" id="seven">7</button>
+            <button onclick="clickButton('8')" class="cal-btn button" id="eight">8</button>
+            <button onclick="clickButton('9')" class="cal-btn button" id="nine">9</button>
+            <button onclick="clickButton('+')" class="cal-btn button arithmetic-operator" id="plus">+</button>
+            <button onclick="clickButton('4')" class="cal-btn button" id="four">4</button>
+            <button onclick="clickButton('5')" class="cal-btn button" id="five">5</button>
+            <button onclick="clickButton('6')" class="cal-btn button" id="six">6</button>
+            <button onclick="clickButton('-')" class="cal-btn button arithmetic-operator" id="minus">-</button>
+            <button onclick="clickButton('1')" class="cal-btn button" id="one">1</button>
+            <button onclick="clickButton('2')" class="cal-btn button" id="two">2</button>
+            <button onclick="clickButton('3')" class="cal-btn button" id="three">3</button>
+            <button onclick="clickButton('/')" class="cal-btn button arithmetic-operator" id="devide">/</button>
+            <button onclick="clickButton('0')" class="cal-btn button" id="zero">0</button>
+            <button onclick="clickButton('.')" class="cal-btn button" id="point">.</button>
+            <button onclick="calculate()" class="cal-btn button arithmetic-operator" id="equal">=</button>
+            <button onclick="clickButton('*')" class="cal-btn button arithmetic-operator" id="multiply">*</button>
+        </div>
+    </div>
+
+    <script src="/js/calculator.js"></script>
+
 </body>
 </html>
